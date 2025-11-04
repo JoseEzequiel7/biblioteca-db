@@ -51,7 +51,7 @@ def addUser(nome, email, numero, senha_hash):
     cur = conn.cursor()
 
     adduser = '''
-        INSERT INTO Usuarios (Nome_usuario, Email, Numero_telefone, Senha_hash, Data_inscricao, Multa_atual)
+        INSERT INTO usuarios (nome_usuario, email, numero_telefone, senha_hash, data_inscricao, multa_atual)
         VALUES (%s, %s, %s, %s, %s, %s)
     '''
     
@@ -71,14 +71,13 @@ def getUserById(id):
     cur = conn.cursor(dictionary=True)
 
     query = '''
-        SELECT Nome_usuario, Email, Numero_telefone, Senha_hash, Data_inscricao, Multa_atual
-        FROM Usuarios
-        WHERE ID_usuario = %s
+        SELECT *
+        FROM usuarios
+        WHERE id_usuario = %s
     '''
 
     cur.execute(query, (id,))
     user = cur.fetchone()
-
     cur.close()
     conn.close()
     return user
@@ -90,8 +89,8 @@ def getUserByEmail(email):
 
     query = '''
         SELECT *
-        FROM Usuarios
-        WHERE Email = %s
+        FROM usuarios
+        WHERE email = %s
     '''
     
 

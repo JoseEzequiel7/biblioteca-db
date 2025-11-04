@@ -35,6 +35,7 @@ class User(UserMixin):
 @login_manager.user_loader
 def load_user(id):
     user = getUserById(id)
+    print(user)
     return User(id, user["nome_usuario"])
 
 
