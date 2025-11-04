@@ -30,7 +30,6 @@ def initDB():
         cur = conn.cursor()
         with open(SQL_BASE, 'r') as base:
             cur.execute(base.read())
-        conn.commit()
         cur.close()
         conn.close()
 
