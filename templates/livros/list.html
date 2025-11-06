@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% for livro in livros %}
+<div>
+    <h3>{{ livro["titulo"] }}</h3>
+    <p>{{ livro["resumo"] }}</p>
+    <p>Gênero: {{ livro["nome_genero"] }}</p>
+    <p>Autor: {{ livro["nome_autor"] }}</p>
+    <p>Editora: {{ livro["nome_editora"] }}</p>
+    <p>Ano de publicação: {{ livro["ano_publicacao"] }}</p>
+</div>
+{% endfor %}
+{% endblock main %}

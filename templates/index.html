@@ -1,1 +1,11 @@
 {% extends "base.html" %}
+
+{% block main %}
+<div class="message">
+    <h1>Bem-vindo à <span class="brand">Giva's Livros</span> 📚</h1>
+    <p>Explore um universo de histórias, conhecimento e imaginação — tudo em um só lugar.</p>
+    <p>Na <strong>Giva's</strong>, garantimos livros em excelente estado, com preços acessíveis e atendimento feito com carinho.</p>
+    <p>Descubra novas leituras, revisite seus clássicos favoritos e sinta o prazer de ter um bom livro nas mãos.</p>
+    <a href="{{ url_for('livros') }}" class="btn">Explorar Livros</a>
+</div>
+{% endblock main %}
